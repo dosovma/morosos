@@ -8,13 +8,13 @@ function App() {
     e.preventDefault();
     try {
       const response = await fetch(
-          'https://dmq5zvn1g5.execute-api.eu-south-2.amazonaws.com/test/DynamoDBManager',
+          'https://xx9h52sa90.execute-api.eu-north-1.amazonaws.com/test/api/v1',
           {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ PK: name, SK: surname })
+            body: '{"operation": "create", "payload": {"Item": {"id": "123456", "nombre": "dosov"}}}'
           }
       );
 
@@ -36,7 +36,7 @@ function App() {
 
   return (
       <div style={styles.container}>
-        <h1 style={styles.title}>React Simple Form</h1>
+        <h1 style={styles.title}>Detalles del inquilino</h1>
         <form onSubmit={handleSubmit} style={styles.form}>
           <div style={styles.field}>
             <label htmlFor="name">Nombre</label>
